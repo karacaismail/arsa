@@ -222,13 +222,13 @@ function BreakevenChart() {
 /* ── INVESTMENT ── */
 function Investment() {
   const topItems = [
-    { label: "Personel", amount: 32_701_552, pct: 40, color: "bg-red" },
-    { label: "OPEX", amount: 22_953_694, pct: 28, color: "bg-amber" },
-    { label: "Dijital Pazarlama", amount: 22_910_000, pct: 28, color: "bg-blue" },
-    { label: "CAPEX", amount: 2_863_100, pct: 4, color: "bg-violet" },
+    { label: "Personel", amount: 37_353_380, pct: 43, color: "bg-red" },
+    { label: "OPEX", amount: 22_953_694, pct: 27, color: "bg-amber" },
+    { label: "Dijital Pazarlama", amount: 22_910_000, pct: 27, color: "bg-blue" },
+    { label: "CAPEX", amount: 2_863_100, pct: 3, color: "bg-violet" },
   ];
   const personnelRows = [
-    { label: "Brüt Maaş Toplamı (İşveren Maliyeti)", amount: 30_334_995 },
+    { label: "Brüt Maaş Toplamı (İşveren Maliyeti)", amount: 34_986_823 },
     { label: "Sosyal Bütçe (ödül/ikram/eğitim)", amount: 2_366_557 },
   ];
   const opexRows = [
@@ -282,7 +282,7 @@ function Investment() {
     <section id="yatirim" className="py-24 px-6">
       <div className="max-w-2xl mx-auto">
         <Reveal><p className="text-text-3 text-xs tracking-[0.3em] uppercase text-center">ROI Noktasına Kadar (12 Ay) Toplam Harcamalar</p></Reveal>
-        <Reveal delay={0.1}><p className="text-6xl md:text-[7rem] font-bold text-rose mt-4 tracking-tight text-center"><Counter value={40_253_698} className="text-rose" /></p></Reveal>
+        <Reveal delay={0.1}><p className="text-6xl md:text-[7rem] font-bold text-rose mt-4 tracking-tight text-center"><Counter value={38_070_148} className="text-rose" /></p></Reveal>
         <Reveal delay={0.2}><p className="text-text-3 mt-3 text-lg text-center">harcanacak para — bu bilinmeli. <span className="text-text-3/70">(risk payı %5 eklendi)</span></p></Reveal>
         <Reveal delay={0.3} className="mt-14">
           <div className="flex h-4 rounded-full overflow-hidden">
@@ -302,7 +302,7 @@ function Investment() {
           </div>
         </Reveal>
         <Reveal delay={0.45} className="mt-8">
-          <DetailBlock title="Personel Detayı" icon="red" rows={personnelRows} total={32_701_552} bg="bg-red/5" />
+          <DetailBlock title="Personel Detayı" icon="red" rows={personnelRows} total={37_353_380} bg="bg-red/5" />
         </Reveal>
         <Reveal delay={0.5} className="mt-4">
           <DetailBlock title="OPEX Detayı" icon="amber" rows={opexRows} total={22_953_694} bg="bg-amber/5" />

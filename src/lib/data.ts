@@ -77,19 +77,19 @@ export const MONTHLY_2026_2027: MonthData[] = [
   { period: "Eki 26", revenue: 76_000, expenses: 1_207_263, net: -1_131_263 },
   { period: "Kas 26", revenue: 169_000, expenses: 1_305_130, net: -1_136_130 },
   { period: "Ara 26", revenue: 374_000, expenses: 2_449_866, net: -2_075_866, event: "Yıl sonu — ilk maaşlar" },
-  // 2027: Gelir=297.325.000 / Gider=69.456.098 / Net=227.868.902
+  // 2027: Gelir=297.325.000 / Gider=76.107.926 (Excel+ek 100 kadro) / Net=221.217.074
   { period: "Oca 27", revenue: 824_000, expenses: 3_577_969, net: -2_753_969, event: "B2B Lansman" },
   { period: "Sub 27", revenue: 1_794_000, expenses: 3_287_646, net: -1_493_646 },
   { period: "Mar 27", revenue: 3_808_000, expenses: 3_918_820, net: -110_820, event: "Neredeyse başabaş" },
   { period: "Nis 27", revenue: 7_697_000, expenses: 4_347_480, net: 3_349_520, event: "BAŞABAŞ — Operasyonel", isMilestone: true },
-  { period: "May 27", revenue: 14_191_000, expenses: 4_953_874, net: 9_237_126, event: "ROI — Yatırım geri dönüşü" },
-  { period: "Haz 27", revenue: 22_900_000, expenses: 5_811_595, net: 17_088_405 },
-  { period: "Tem 27", revenue: 31_609_000, expenses: 6_248_792, net: 25_360_208 },
-  { period: "Agu 27", revenue: 38_103_000, expenses: 6_582_649, net: 31_520_351 },
-  { period: "Eyl 27", revenue: 41_992_000, expenses: 7_600_987, net: 34_391_013 },
-  { period: "Eki 27", revenue: 44_006_000, expenses: 7_370_196, net: 36_635_804, event: "100.000 arsa ilanı eşiği" },
-  { period: "Kas 27", revenue: 44_976_000, expenses: 8_239_967, net: 36_736_033 },
-  { period: "Ara 27", revenue: 45_425_000, expenses: 9_516_123, net: 35_908_877, event: "S-curve plato başlangıcı" },
+  { period: "May 27", revenue: 14_191_000, expenses: 5_083_091, net: 9_107_909, event: "+ek kadro başlangıcı" },
+  { period: "Haz 27", revenue: 22_900_000, expenses: 6_070_030, net: 16_829_970 },
+  { period: "Tem 27", revenue: 31_609_000, expenses: 6_636_444, net: 24_972_556 },
+  { period: "Agu 27", revenue: 38_103_000, expenses: 7_099_519, net: 31_003_481 },
+  { period: "Eyl 27", revenue: 41_992_000, expenses: 8_247_074, net: 33_744_926 },
+  { period: "Eki 27", revenue: 44_006_000, expenses: 8_145_501, net: 35_860_499, event: "100.000 arsa ilanı eşiği" },
+  { period: "Kas 27", revenue: 44_976_000, expenses: 9_144_489, net: 35_831_511 },
+  { period: "Ara 27", revenue: 45_425_000, expenses: 10_549_863, net: 34_875_137, event: "S-curve plato başlangıcı" },
 ];
 
 // Basabas grafiklerinde kullanmak icin: Tem 2026 - Ara 2028 (30 ay)
