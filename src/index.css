@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #0B0F1A;
+  --color-surface-2: #111827;
+  --color-surface-3: #1A2332;
+  --color-surface-4: #243044;
+  --color-text: #F1F5F9;
+  --color-text-2: #94A3B8;
+  --color-text-3: #64748B;
+  --color-border: #1E293B;
+  --color-blue: #3B82F6;
+  --color-cyan: #22D3EE;
+  --color-emerald: #10B981;
+  --color-amber: #F59E0B;
+  --color-red: #EF4444;
+  --color-violet: #8B5CF6;
+  --color-rose: #F43F5E;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 300;
+  background: var(--color-surface);
+  color: var(--color-text);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection { background: rgba(59,130,246,0.3); }
+
+/* Smooth gradient backgrounds for sections */
+.section-gradient-loss { background: linear-gradient(180deg, var(--color-surface) 0%, #1a0a0a 50%, var(--color-surface) 100%); }
+.section-gradient-profit { background: linear-gradient(180deg, var(--color-surface) 0%, #0a1a0f 50%, var(--color-surface) 100%); }
+.section-gradient-blue { background: linear-gradient(180deg, var(--color-surface) 0%, #0a0f1a 50%, var(--color-surface) 100%); }
+
+/* Glow effects */
+.glow-emerald { box-shadow: 0 0 60px rgba(16,185,129,0.15), 0 0 120px rgba(16,185,129,0.05); }
+.glow-blue { box-shadow: 0 0 60px rgba(59,130,246,0.15), 0 0 120px rgba(59,130,246,0.05); }
+.glow-cyan { box-shadow: 0 0 60px rgba(34,211,238,0.15), 0 0 120px rgba(34,211,238,0.05); }
+
+/* Number styling */
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* Scroll progress indicator */
+.scroll-progress { position: fixed; top: 0; left: 0; height: 2px; background: linear-gradient(90deg, var(--color-blue), var(--color-cyan)); z-index: 100; transition: width 50ms linear; }
