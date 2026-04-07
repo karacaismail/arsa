@@ -95,20 +95,20 @@ export const MONTHLY_2026_2027: MonthData[] = [
 // Basabas grafiklerinde kullanmak icin: Tem 2026 - Ara 2028 (30 ay)
 export function getExtendedMonthly(): MonthData[] {
   const base = [...MONTHLY_2026_2027];
-  // 2028: Revenue 569M, Expenses 62M (S-curve plato devam)
+  // 2028: Revenue 569M, Expenses ~133M (Ara 27 ₺10.5M'den düzgün devam, 250 kadro sabit)
   const months2028 = [
-    { period: "Oca 28", revenue: 42_000_000, expenses: 5_000_000 },
-    { period: "Sub 28", revenue: 43_000_000, expenses: 5_000_000 },
-    { period: "Mar 28", revenue: 44_000_000, expenses: 5_000_000 },
-    { period: "Nis 28", revenue: 45_000_000, expenses: 5_000_000 },
-    { period: "May 28", revenue: 46_000_000, expenses: 5_000_000 },
-    { period: "Haz 28", revenue: 47_000_000, expenses: 5_500_000 },
-    { period: "Tem 28", revenue: 48_000_000, expenses: 5_500_000 },
-    { period: "Agu 28", revenue: 49_000_000, expenses: 5_500_000 },
-    { period: "Eyl 28", revenue: 50_000_000, expenses: 5_500_000 },
-    { period: "Eki 28", revenue: 51_000_000, expenses: 5_000_000 },
-    { period: "Kas 28", revenue: 51_500_000, expenses: 5_000_000 },
-    { period: "Ara 28", revenue: 52_500_000, expenses: 5_000_000 },
+    { period: "Oca 28", revenue: 42_000_000, expenses: 10_700_000 },
+    { period: "Sub 28", revenue: 43_000_000, expenses: 10_800_000 },
+    { period: "Mar 28", revenue: 44_000_000, expenses: 10_900_000 },
+    { period: "Nis 28", revenue: 45_000_000, expenses: 11_000_000 },
+    { period: "May 28", revenue: 46_000_000, expenses: 11_100_000 },
+    { period: "Haz 28", revenue: 47_000_000, expenses: 11_200_000 },
+    { period: "Tem 28", revenue: 48_000_000, expenses: 11_300_000 },
+    { period: "Agu 28", revenue: 49_000_000, expenses: 11_400_000 },
+    { period: "Eyl 28", revenue: 50_000_000, expenses: 11_500_000 },
+    { period: "Eki 28", revenue: 51_000_000, expenses: 11_600_000 },
+    { period: "Kas 28", revenue: 51_500_000, expenses: 11_700_000 },
+    { period: "Ara 28", revenue: 52_500_000, expenses: 11_800_000 },
   ];
   return [
     ...base,
@@ -140,7 +140,7 @@ export function getYearlyData(): YearData[] {
     // Giderler: Excel mevcut + ek 100 kişi maaş etkisi (May 2027'den eşit dağılım)
     { year: 2026, revenue: 675_000, expenses: 9_972_248, isProjection: false },
     { year: 2027, revenue: 297_325_000, expenses: 76_108_000, isProjection: false },    // +4.7M ek kadro
-    { year: 2028, revenue: 600_000_000, expenses: 84_484_000, isProjection: true },     // aylık ~45→55M devam (+102%)
+    { year: 2028, revenue: 600_000_000, expenses: 133_000_000, isProjection: true },     // aylık ~10.7→11.8M, 250 kadro sabit
     { year: 2029, revenue: 780_000_000, expenses: 119_091_000, isProjection: true },   // +30% büyüme
     { year: 2030, revenue: 940_000_000, expenses: 154_698_000, isProjection: true },   // +21% büyüme
     { year: 2031, revenue: 1_083_000_000, expenses: 190_306_000, isProjection: true }, // +15% büyüme
