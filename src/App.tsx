@@ -530,18 +530,18 @@ function PazarPayi() {
         <div className="space-y-3">
           {sc.years.map((y, i) => (
             <Reveal key={y.year} delay={i * 0.04}>
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 p-3 sm:p-4 rounded-xl border border-border hover:border-blue/20 transition-colors">
-                <span className="w-full sm:w-12 text-base sm:text-lg font-bold text-text-2 shrink-0">{y.year}</span>
+              <div className="flex items-center gap-2 sm:gap-4 p-3 sm:p-4 rounded-xl border border-border hover:border-blue/20 transition-colors">
+                <span className="w-10 sm:w-12 text-sm sm:text-lg font-bold text-text-2 shrink-0">{y.year}</span>
 
                 {/* SAM bar */}
-                <div className="flex-1">
-                  <div className="h-8 bg-white/[0.04] rounded-lg overflow-hidden relative">
+                <div className="flex-1 min-w-0">
+                  <div className="h-7 sm:h-8 bg-white/[0.04] rounded-lg overflow-hidden relative">
                     <motion.div
-                      className={clsx("h-full rounded-lg flex items-center px-3", sc.bg)}
+                      className={clsx("h-full rounded-lg flex items-center px-2 sm:px-3", sc.bg)}
                       animate={{ width: `${Math.max((y.samPay / sc.years[sc.years.length - 1].samPay) * 100, 4)}%` }}
                       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     >
-                      <span className="text-white text-sm font-bold whitespace-nowrap tabular">
+                      <span className="text-white text-xs sm:text-sm font-bold whitespace-nowrap tabular">
                         <GsapNumber value={y.samPay} prefix="%" decimals={1} />
                       </span>
                     </motion.div>
@@ -549,24 +549,24 @@ function PazarPayi() {
                 </div>
 
                 {/* Revenue */}
-                <div className="w-full sm:w-36 text-left sm:text-right shrink-0">
-                  <p className="text-xs text-text-3">Gelir</p>
-                  <p className={clsx("text-base font-bold tabular", sc.color)}>
+                <div className="w-24 sm:w-36 text-right shrink-0">
+                  <p className="text-[10px] sm:text-xs text-text-3">Gelir</p>
+                  <p className={clsx("text-xs sm:text-base font-bold tabular", sc.color)}>
                     <GsapNumber value={y.gelir} prefix="₺" />
                   </p>
                 </div>
 
                 {/* Growth */}
-                <div className="w-full sm:w-20 text-left sm:text-right shrink-0 hidden sm:block">
+                <div className="w-14 sm:w-20 text-right shrink-0">
                   {y.buyume ? (
                     <>
-                      <p className="text-xs text-text-3">Büyüme</p>
-                      <p className="text-base font-bold text-cyan tabular">
+                      <p className="text-[10px] sm:text-xs text-text-3">Büyüme</p>
+                      <p className="text-xs sm:text-base font-bold text-cyan tabular">
                         <GsapNumber value={y.buyume} prefix="+" suffix="%" />
                       </p>
                     </>
                   ) : (
-                    <p className="text-xs text-text-3">Lansman</p>
+                    <p className="text-[10px] sm:text-xs text-text-3">Lansman</p>
                   )}
                 </div>
               </div>
