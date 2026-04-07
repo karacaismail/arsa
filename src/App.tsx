@@ -73,7 +73,7 @@ function Hero() {
         <span className="bg-gradient-to-r from-blue via-cyan to-emerald bg-clip-text text-transparent">arsam.net</span>
       </motion.h1>
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} className="mt-10 flex flex-col sm:flex-row items-center gap-3 sm:gap-6 text-xl sm:text-3xl font-light">
-        <span className="text-rose">₺49.000.000</span><ArrowRight className="w-5 h-5 text-text-3" /><span className="text-emerald">₺4.131.069.752</span>
+        <span className="text-rose">₺42.300.164</span><ArrowRight className="w-5 h-5 text-text-3" /><span className="text-emerald">₺4.131.069.752</span>
       </motion.div>
       <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1 }} className="text-text-3 text-sm mt-2">başlangıç sermayesi → 2032 kümülatif nakit (vergi öncesi)</motion.p>
       <motion.div animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 2.5 }} className="absolute bottom-16"><ChevronDown className="w-6 h-6 text-text-3" /></motion.div>
