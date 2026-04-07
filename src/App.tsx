@@ -100,8 +100,8 @@ function SCurve() {
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={data} margin={{ top: 10, right: 10, left: 10, bottom: 40 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#1E293B" />
-                <XAxis dataKey="name" tick={{ fill: "#64748B", fontSize: 11 }} angle={-45} textAnchor="end" height={60} />
-                <YAxis tick={{ fill: "#64748B", fontSize: 11 }} tickFormatter={fmt} width={110} />
+                <XAxis dataKey="name" tick={{ fill: "#64748B", fontSize: 9 }} angle={-45} textAnchor="end" height={50} />
+                <YAxis tick={{ fill: "#64748B", fontSize: 11 }} tickFormatter={fmt} width={80} />
                 <Tooltip
                   contentStyle={{ background: "#111827", border: "1px solid #1E293B", borderRadius: 12, fontSize: 13 }}
                   labelStyle={{ color: "#94A3B8" }}
@@ -154,7 +154,7 @@ function BreakevenChart() {
               <BarChart data={data} margin={{ top: 20, right: 10, left: 10, bottom: 50 }} barCategoryGap="20%">
                 <CartesianGrid strokeDasharray="3 3" stroke="#1E293B" />
                 <XAxis dataKey="name" tick={{ fill: "#64748B", fontSize: 10 }} angle={-60} textAnchor="end" height={70} interval={0} />
-                <YAxis tick={{ fill: "#64748B", fontSize: 11 }} tickFormatter={fmt} width={110} />
+                <YAxis tick={{ fill: "#64748B", fontSize: 11 }} tickFormatter={fmt} width={80} />
                 <Tooltip
                   contentStyle={{ background: "#111827", border: "1px solid #1E293B", borderRadius: 12, fontSize: 13 }}
                   labelStyle={{ color: "#94A3B8" }}
@@ -610,10 +610,10 @@ function Vision() {
                     <span className="text-xl sm:text-2xl font-bold">{y.year}</span>
                     <span className="text-[10px] mt-1 px-2 py-0.5 rounded-full border" style={{ borderColor: y.phaseColor, color: y.phaseColor }}>{y.phase}</span>
                   </div>
-                  <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-4 p-3 sm:p-5">
-                    <div><p className="text-[10px] text-text-3 uppercase">Gelir</p><p className="text-base sm:text-lg font-bold text-blue">{formatTL(y.revenue)}</p></div>
-                    <div><p className="text-[10px] text-text-3 uppercase">EBITDA</p><p className={clsx("text-lg font-bold", y.ebitda >= 0 ? "text-emerald" : "text-red")}>{formatTL(y.ebitda)}</p></div>
-                    <div><p className="text-[10px] text-text-3 uppercase">SOM</p><p className="text-lg font-bold text-violet">{y.somPct > 0 ? `%${y.somPct}` : "GTM"}</p></div>
+                  <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-1 sm:gap-4 p-2 sm:p-5">
+                    <div><p className="text-[10px] text-text-3 uppercase">Gelir</p><p className="text-xs sm:text-lg font-bold text-blue">{formatTL(y.revenue)}</p></div>
+                    <div><p className="text-[10px] text-text-3 uppercase">EBITDA</p><p className={clsx("text-xs sm:text-lg font-bold", y.ebitda >= 0 ? "text-emerald" : "text-red")}>{formatTL(y.ebitda)}</p></div>
+                    <div><p className="text-[10px] text-text-3 uppercase">SOM</p><p className="text-xs sm:text-lg font-bold text-violet">{y.somPct > 0 ? `%${y.somPct}` : "GTM"}</p></div>
                     <div className="hidden md:block"><p className="text-[10px] text-text-3 uppercase">Kadro</p><p className="text-lg font-bold text-cyan">{y.headcount}</p></div>
                     <div className="hidden md:block"><p className="text-[10px] text-text-3 uppercase">Marj</p><p className={clsx("text-lg font-bold", y.margin >= 0 ? "text-emerald" : "text-red")}>%{y.margin}</p></div>
                   </div>
