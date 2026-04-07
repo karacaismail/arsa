@@ -30,14 +30,15 @@ export const SOM_TARGETS: Record<number, number> = {
   2032: 0.263, // %26.3 (Excel'e yakınsama)
 };
 
+// Kadro: Excel mevcut (146) + ek 104 kişi (May 2027'den eşit dağılım) = 250 hedef
 export const HEADCOUNT: Record<number, { count: number; roles: string; phase: string; color: string }> = {
   2026: { count: 19, roles: "CPO, Asistan, Grafik, PO, GIS, İSG, SM, Backend, Videographer, Helpdesk, Frontend, SEO, Content, Data Analyst, PPC, Creative, Moderator, QA", phase: "LANSMAN", color: "#3B82F6" },
-  2027: { count: 63, roles: "+Sr DevOps, Head of Eng, UX/UI, Growth Lead, Muhasebe, PM, Fraud, B2B, Mobile, QA Lead, Data/AI Lead, ML Eng, Test Auto, Scrum Master", phase: "BÜYÜME", color: "#10B981" },
-  2028: { count: 84, roles: "+Sr Backend, Sr Frontend, Data Scientist, Security Eng, Content/SEO Lead, Hukuk Danışmanı, İK Müdürü, Ofis Yöneticisi", phase: "ÖLÇEKleme", color: "#8B5CF6" },
-  2029: { count: 101, roles: "+Finans Müdürü, KVKK, Agile Coach, RTE, Enterprise Sales, Sr. Data Eng, Trust & Safety", phase: "OLGUNLAŞMA", color: "#F59E0B" },
-  2030: { count: 117, roles: "+System Architect, Platform Eng, Performance Mktg, Seller Support, PR Uzmanı", phase: "HÂKİMİYET", color: "#10B981" },
-  2031: { count: 133, roles: "+AI/ML Engineer (2), Solution Architect, Sr. Product Designer, UX Researcher", phase: "KONSOLİDASYON", color: "#3B82F6" },
-  2032: { count: 149, roles: "+Staff Engineers, API Marketplace, Full SAFe (ART-1 + ART-2) — 6-7x verimlilik (AI destekli)", phase: "VİZYON", color: "#22D3EE" },
+  2027: { count: 76, roles: "+Sr DevOps, Head of Eng, UX/UI, Growth Lead, Muhasebe, PM, Fraud, B2B, Mobile, QA Lead, Data/AI Lead, ML Eng, Test Auto, Scrum Master +ek kadro", phase: "BÜYÜME", color: "#10B981" },
+  2028: { count: 114, roles: "+Sr Backend, Sr Frontend, Data Scientist, Security Eng, Content/SEO Lead, Hukuk Danışmanı, İK Müdürü, Ofis Yöneticisi +ölçekleme kadrosu", phase: "ÖLÇEKLEME", color: "#8B5CF6" },
+  2029: { count: 150, roles: "+Finans Müdürü, KVKK, Agile Coach, RTE, Enterprise Sales, Sr. Data Eng, Trust & Safety +büyüme kadrosu", phase: "OLGUNLAŞMA", color: "#F59E0B" },
+  2030: { count: 185, roles: "+System Architect, Platform Eng, Performance Mktg, Seller Support, PR Uzmanı +operasyon kadrosu", phase: "HÂKİMİYET", color: "#10B981" },
+  2031: { count: 220, roles: "+AI/ML Engineer (2), Solution Architect, Sr. Product Designer, UX Researcher +konsolidasyon kadrosu", phase: "KONSOLİDASYON", color: "#3B82F6" },
+  2032: { count: 250, roles: "+Staff Engineers, API Marketplace, Full SAFe (ART-1 + ART-2) — tam kadro hedefi", phase: "VİZYON", color: "#22D3EE" },
 };
 
 export const CAPEX: Record<number, { amount: number; desc: string }> = {
@@ -136,13 +137,14 @@ export interface YearData {
 export function getYearlyData(): YearData[] {
   const raw: Partial<YearData>[] = [
     // 2026-2027: MD + Excel gider, 2028+: S-curve geçiş (MD→Excel)
+    // Giderler: Excel mevcut + ek 100 kişi maaş etkisi (May 2027'den eşit dağılım)
     { year: 2026, revenue: 675_000, expenses: 9_972_248, isProjection: false },
-    { year: 2027, revenue: 297_325_000, expenses: 71_456_098, isProjection: false },
-    { year: 2028, revenue: 63_000_000, expenses: 62_000_000, isProjection: true },      // S-curve geçiş
-    { year: 2029, revenue: 242_000_000, expenses: 78_000_000, isProjection: true },     // S-curve geçiş
-    { year: 2030, revenue: 663_000_000, expenses: 95_000_000, isProjection: true },     // S-curve geçiş
-    { year: 2031, revenue: 1_083_000_000, expenses: 112_000_000, isProjection: true },  // S-curve yakınsama
-    { year: 2032, revenue: 1_262_000_000, expenses: 130_000_000, isProjection: true },  // Excel'e yakın
+    { year: 2027, revenue: 297_325_000, expenses: 76_108_000, isProjection: false },    // +4.7M ek kadro
+    { year: 2028, revenue: 63_000_000, expenses: 84_484_000, isProjection: true },      // +22.5M ek kadro
+    { year: 2029, revenue: 242_000_000, expenses: 119_091_000, isProjection: true },    // +41.1M ek kadro
+    { year: 2030, revenue: 663_000_000, expenses: 154_698_000, isProjection: true },    // +59.7M ek kadro
+    { year: 2031, revenue: 1_083_000_000, expenses: 190_306_000, isProjection: true },  // +78.3M ek kadro
+    { year: 2032, revenue: 1_262_000_000, expenses: 184_271_000, isProjection: true },  // +54.3M ek kadro (7 ay)
   ];
 
   return raw.map(r => {
