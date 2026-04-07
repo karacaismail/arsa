@@ -47,3 +47,14 @@ body {
 
 /* Scroll progress indicator */
 .scroll-progress { position: fixed; top: 0; left: 0; height: 2px; background: linear-gradient(90deg, var(--color-blue), var(--color-cyan)); z-index: 100; transition: width 50ms linear; }
+
+/* Mobile-first: 320px min-width fluid */
+html { min-width: 320px; }
+* { box-sizing: border-box; }
+
+/* Recharts mobile: küçük ekranlarda font */
+@media (max-width: 640px) {
+  .recharts-text { font-size: 9px !important; }
+  .recharts-legend-item-text { font-size: 11px !important; }
+  .recharts-tooltip-wrapper { max-width: 200px; }
+}

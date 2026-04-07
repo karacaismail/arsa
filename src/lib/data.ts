@@ -19,15 +19,15 @@ export const SAM_BY_YEAR: Record<number, number> = {
   2032: 4_800_000_000,
 };
 
-// 2026-2027: MD baz, 2028+: S-curve geçiş (MD→Excel)
+// 2026-2027: MD baz, 2028+: tutarlı büyüme (gelir/SAM oranı)
 export const SOM_TARGETS: Record<number, number> = {
-  2026: 0.001, // %0.06 (MD baz — lansman)
-  2027: 0.005, // %0.54 (MD baz — PMF)
-  2028: 0.021, // %2.1 (S-curve geçiş)
-  2029: 0.070, // %7.0 (S-curve geçiş)
-  2030: 0.170, // %17.0 (S-curve geçiş)
-  2031: 0.246, // %24.6 (S-curve geçiş)
-  2032: 0.263, // %26.3 (Excel'e yakınsama)
+  2026: 0.001, // %0.1 (lansman)
+  2027: 0.005, // %0.5 (PMF)
+  2028: 0.197, // %19.7 (ölçekleme — aylık ~45→55M devam)
+  2029: 0.226, // %22.6 (olgunlaşma)
+  2030: 0.241, // %24.1 (hâkimiyet)
+  2031: 0.246, // %24.6 (konsolidasyon)
+  2032: 0.250, // %25.0 (plato)
 };
 
 // Kadro: Excel mevcut (146) + ek 104 kişi (May 2027'den eşit dağılım) = 250 hedef
@@ -140,11 +140,11 @@ export function getYearlyData(): YearData[] {
     // Giderler: Excel mevcut + ek 100 kişi maaş etkisi (May 2027'den eşit dağılım)
     { year: 2026, revenue: 675_000, expenses: 9_972_248, isProjection: false },
     { year: 2027, revenue: 297_325_000, expenses: 76_108_000, isProjection: false },    // +4.7M ek kadro
-    { year: 2028, revenue: 63_000_000, expenses: 84_484_000, isProjection: true },      // +22.5M ek kadro
-    { year: 2029, revenue: 242_000_000, expenses: 119_091_000, isProjection: true },    // +41.1M ek kadro
-    { year: 2030, revenue: 663_000_000, expenses: 154_698_000, isProjection: true },    // +59.7M ek kadro
-    { year: 2031, revenue: 1_083_000_000, expenses: 190_306_000, isProjection: true },  // +78.3M ek kadro
-    { year: 2032, revenue: 1_262_000_000, expenses: 184_271_000, isProjection: true },  // +54.3M ek kadro (7 ay)
+    { year: 2028, revenue: 600_000_000, expenses: 84_484_000, isProjection: true },     // aylık ~45→55M devam (+102%)
+    { year: 2029, revenue: 780_000_000, expenses: 119_091_000, isProjection: true },   // +30% büyüme
+    { year: 2030, revenue: 940_000_000, expenses: 154_698_000, isProjection: true },   // +21% büyüme
+    { year: 2031, revenue: 1_083_000_000, expenses: 190_306_000, isProjection: true }, // +15% büyüme
+    { year: 2032, revenue: 1_200_000_000, expenses: 184_271_000, isProjection: true }, // +11% plato
   ];
 
   return raw.map(r => {
@@ -160,7 +160,7 @@ export function getYearlyData(): YearData[] {
       year: y, revenue: rev, expenses: exp, ebitda,
       netProfit: ebitda * 0.75,
       margin: rev > 0 ? Math.round(ebitda / rev * 100) : 0,
-      somPct: somPct * 100,
+      somPct: Math.round(somPct * 1000) / 10,
       somVal: sam * somPct,
       headcount: hc?.count || 0,
       phase: hc?.phase || "",
